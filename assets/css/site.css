@@ -451,7 +451,7 @@ h1, h2, h3 { font-family: var(--titulos); color: var(--titulo); line-height: 1.2
 .df__pontos li:last-child { border-bottom: 1px solid var(--linha); }
 .df__ic { display: grid; place-items: center; flex: none; width: 2.75rem; height: 2.75rem; border-radius: 50%; background: #eef2f7; color: var(--azul-2); }
 .df__ic .ic { width: 1.45rem; height: 1.45rem; stroke-width: 1.7; }
-.df__pontos h3 { font-size: 1.05rem; margin-bottom: .1rem; }
+.df__pontos h2 { font-size: 1.05rem; margin-bottom: .1rem; }
 .df__pontos p { font-size: .93rem; line-height: 1.5; }
 .intro__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 2rem; }
 @media (max-width: 899px) {
