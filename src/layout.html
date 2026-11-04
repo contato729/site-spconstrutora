@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{titulo}}</title>
+  <meta name="description" content="{{descricao}}">
+  <link rel="canonical" href="{{url}}">
+  <meta name="theme-color" content="#0a2240">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="S&amp;P Engenharia e Construção">
+  <meta property="og:title" content="{{titulo}}">
+  <meta property="og:description" content="{{descricao}}">
+  <meta property="og:url" content="{{url}}">
+  <meta property="og:image" content="https://www.spconstrutora.com/assets/img/compartilhar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="{{raiz}}assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="{{raiz}}assets/img/apple-touch-icon.png">
+  <link rel="preload" href="{{raiz}}assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{raiz}}assets/fonts/opensans-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{raiz}}assets/fonts/sourcesans-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{raiz}}assets/css/site.css">
+  <script>document.documentElement.classList.add("js");</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    "name": "S&P Engenharia e Construção",
+    "url": "https://www.spconstrutora.com/",
+    "image": "https://www.spconstrutora.com/assets/img/compartilhar.jpg",
+    "logo": "https://www.spconstrutora.com/assets/img/icone-512.png",
+    "foundingDate": "1989",
+    "email": "contato@spconstrutora.com",
+    "telephone": "+55-51-98447-1009",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Otaviano Silveira, 615 - Centro",
+      "addressLocality": "Sapucaia do Sul",
+      "addressRegion": "RS",
+      "postalCode": "93214-500",
+      "addressCountry": "BR"
+    },
+    "openingHours": "Mo-Fr 08:00-17:00",
+    "sameAs": ["https://www.instagram.com/sepconstrucoes/", "https://www.facebook.com/sp.eng.construcao"]
+  }
+  </script>
+</head>
+<body class="pg-{{menu}}">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo" id="topo">
+    <div class="container topo__dentro">
+      <a class="marca marca--topo" href="{{inicio}}" aria-label="S&amp;P Engenharia e Construção, página inicial">
+        <img src="{{raiz}}assets/img/sp-branco.webp" width="400" height="373" alt="">
+      </a>
+      <nav class="menu" id="menu" aria-label="Principal">
+        <ul>
+          <li><a href="{{inicio}}"{{ativo:inicio}}>Início</a></li>
+          <li><a href="{{raiz}}empresa/"{{ativo:empresa}}>Empresa</a></li>
+          <li><a href="{{raiz}}servicos/"{{ativo:servicos}}>Serviços</a></li>
+          <li><a href="{{raiz}}portfolio/"{{ativo:portfolio}}>Portfólio</a></li>
+          <li><a href="{{raiz}}clientes/"{{ativo:clientes}}>Clientes</a></li>
+          <li><a href="{{raiz}}contato/"{{ativo:contato}}>Contato</a></li>
+        </ul>
+      </nav>
+      <ul class="topo__social">
+        <li><a href="https://www.facebook.com/sp.eng.construcao" rel="noopener" aria-label="Facebook da S&amp;P">{{icone:brand-facebook}}</a></li>
+        <li><a href="https://www.instagram.com/sepconstrucoes/" rel="noopener" aria-label="Instagram da S&amp;P">{{icone:brand-instagram}}</a></li>
+        <li><a href="https://wa.me/5551984471009" rel="noopener" aria-label="WhatsApp da S&amp;P">{{icone:brand-whatsapp}}</a></li>
+      </ul>
+      <button class="topo__hamb" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">{{icone:menu-2}}</button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+{{conteudo}}
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__grade">
+      <div class="rodape__col rodape__col--sobre">
+        <a class="marca marca--clara" href="{{inicio}}">
+          <img src="{{raiz}}assets/img/sp-branco.webp" width="400" height="373" loading="lazy" alt="">
+          <span><strong>S&amp;P</strong>Engenharia e Construção</span>
+        </a>
+        <p>Desde 1989 executando obras, reformas e manutenção industrial com uma equipe de engenheiros civis e arquitetos.</p>
+        <ul class="rodape__social">
+          <li><a href="https://www.instagram.com/sepconstrucoes/" rel="noopener" aria-label="Instagram">{{icone:brand-instagram}}</a></li>
+          <li><a href="https://www.facebook.com/sp.eng.construcao" rel="noopener" aria-label="Facebook">{{icone:brand-facebook}}</a></li>
+          <li><a href="https://wa.me/5551984471009" rel="noopener" aria-label="WhatsApp">{{icone:brand-whatsapp}}</a></li>
+        </ul>
+      </div>
+      <div class="rodape__col">
+        <h2>Páginas</h2>
+        <ul class="rodape__lista">
+          <li><a href="{{inicio}}">Início</a></li>
+          <li><a href="{{raiz}}empresa/">Empresa</a></li>
+          <li><a href="{{raiz}}servicos/">Serviços</a></li>
+          <li><a href="{{raiz}}portfolio/">Portfólio</a></li>
+          <li><a href="{{raiz}}clientes/">Clientes</a></li>
+          <li><a href="{{raiz}}contato/">Contato</a></li>
+        </ul>
+      </div>
+      <div class="rodape__col">
+        <h2>Serviços</h2>
+        <ul class="rodape__lista">
+          <li><a href="{{raiz}}servicos/#execucao">Execução de obras</a></li>
+          <li><a href="{{raiz}}servicos/#manutencao">Manutenção industrial</a></li>
+          <li><a href="{{raiz}}servicos/#reformas">Reformas e retrofit</a></li>
+          <li><a href="{{raiz}}servicos/#projetos">Projetos personalizados</a></li>
+          <li><a href="{{raiz}}servicos/#gerenciamento">Consultoria e gerenciamento</a></li>
+        </ul>
+      </div>
+      <div class="rodape__col">
+        <h2>Contato</h2>
+        <ul class="rodape__contato">
+          <li>{{icone:map-pin}}<span>Rua Otaviano Silveira, 615, Centro<br>Sapucaia do Sul, RS, 93214-500</span></li>
+          <li>{{icone:phone}}<span><a href="tel:+5551984471009">(51) 98447-1009</a><br><a href="tel:+5551984470985">(51) 98447-0985</a></span></li>
+          <li>{{icone:mail}}<span><a href="mailto:contato@spconstrutora.com">contato@spconstrutora.com</a></span></li>
+          <li>{{icone:clock}}<span>Segunda a sexta, das 8h às 17h</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rodape__base">
+      <div class="container">
+        <p>© <span id="ano">2026</span> S&amp;P Engenharia e Construção. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="zap" href="https://wa.me/5551984471009?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20S%26P." rel="noopener" aria-label="Conversar pelo WhatsApp">{{icone:brand-whatsapp}}</a>
+  <a class="subir" href="#topo" aria-label="Voltar ao topo" hidden>{{icone:chevron-up}}</a>
+
+  <dialog class="luz" id="luz" aria-label="Foto ampliada">
+    <button class="luz__fechar" type="button" data-acao="fechar" aria-label="Fechar">{{icone:x}}</button>
+    <button class="luz__seta luz__seta--ant" type="button" data-acao="anterior" aria-label="Foto anterior">{{icone:chevron-left}}</button>
+    <figure>
+      <img id="luz-img" alt="">
+      <figcaption><span id="luz-legenda"></span><span id="luz-conta"></span></figcaption>
+    </figure>
+    <button class="luz__seta luz__seta--prox" type="button" data-acao="proxima" aria-label="Próxima foto">{{icone:chevron-right}}</button>
+  </dialog>
+
+  <script src="{{raiz}}assets/js/site.js" defer></script>
+</body>
+</html>

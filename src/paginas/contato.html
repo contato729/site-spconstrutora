@@ -1,0 +1,79 @@
+titulo: Contato | S&amp;P Engenharia e Construção
+descricao: Tire dúvidas e solicite orçamento ao corpo técnico da S&amp;P Engenharia e Construção. Rua Otaviano Silveira, 615, Centro, Sapucaia do Sul, RS. (51) 98447-1009.
+caminho: contato/
+menu: contato
+---
+    <section class="banner" style="background-image: url('{{raiz}}assets/img/banner-contato.webp')">
+      <div class="container">
+        <h1>Contato</h1>
+        <nav class="migalhas" aria-label="Você está em"><a href="{{inicio}}">Início</a><span aria-hidden="true">/</span><span>Contato</span></nav>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <div class="caixas caixas--contato">
+          <div class="caixa revelar">
+            <span class="caixa__ic">{{icone:phone}}</span>
+            <h3>Telefone e WhatsApp</h3>
+            <p><a href="https://wa.me/5551984471009" rel="noopener">(51) 98447-1009</a><br><a href="tel:+5551984470985">(51) 98447-0985</a></p>
+          </div>
+          <div class="caixa revelar">
+            <span class="caixa__ic">{{icone:mail}}</span>
+            <h3>E-mail</h3>
+            <p><a href="mailto:contato@spconstrutora.com">contato@spconstrutora.com</a><br><a href="mailto:financeiro@spconstrutora.com">financeiro@spconstrutora.com</a></p>
+          </div>
+          <div class="caixa revelar">
+            <span class="caixa__ic">{{icone:map-pin}}</span>
+            <h3>Matriz</h3>
+            <p>Rua Otaviano Silveira, 615, Centro<br>Sapucaia do Sul, RS, 93214-500</p>
+          </div>
+          <div class="caixa revelar">
+            <span class="caixa__ic">{{icone:clock}}</span>
+            <h3>Atendimento</h3>
+            <p>Segunda a sexta<br>das 8h às 17h</p>
+          </div>
+        </div>
+
+        <div class="contato" id="orcamento">
+          <div class="contato__form revelar">
+            <p class="sobretitulo">Orçamento</p>
+            <h2 class="titulo">Solicite um orçamento ao nosso corpo técnico</h2>
+            <p>Preencha os campos e envie: a mensagem abre pronta no seu WhatsApp. Nenhum dado fica guardado neste site.</p>
+            <form class="form" id="form-orcamento" novalidate>
+              <div class="campo">
+                <label for="f-nome">Nome</label>
+                <input id="f-nome" name="nome" type="text" autocomplete="name" required>
+              </div>
+              <div class="campo">
+                <label for="f-empresa">Empresa <span>(opcional)</span></label>
+                <input id="f-empresa" name="empresa" type="text" autocomplete="organization">
+              </div>
+              <div class="campo campo--larga">
+                <label for="f-servico">Serviço</label>
+                <select id="f-servico" name="servico">
+                  <option>Execução de obra</option>
+                  <option>Manutenção industrial</option>
+                  <option>Reforma ou retrofit</option>
+                  <option>Projeto personalizado</option>
+                  <option>Consultoria e gerenciamento</option>
+                  <option>Outro</option>
+                </select>
+              </div>
+              <div class="campo campo--larga">
+                <label for="f-msg">Mensagem</label>
+                <textarea id="f-msg" name="mensagem" rows="5" required></textarea>
+              </div>
+              <p class="form__erro" id="form-erro" role="alert" hidden>Preencha o nome e a mensagem para enviar.</p>
+              <div class="form__acoes">
+                <button class="btn btn--primario btn--grande" type="submit">{{icone:brand-whatsapp}} Enviar pelo WhatsApp</button>
+                <a class="form__email" id="link-email" href="mailto:contato@spconstrutora.com">ou enviar por e-mail</a>
+              </div>
+            </form>
+          </div>
+          <div class="contato__mapa revelar">
+            <iframe title="Mapa: Rua Otaviano Silveira, 615, Sapucaia do Sul" src="https://www.google.com/maps?q=Rua+Otaviano+Silveira,+615+-+Centro,+Sapucaia+do+Sul+-+RS,+93214-500&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,45 @@
+# Publica o site no GitHub Pages (www.spconstrutora.com) a cada envio para a main.
+# Só vai para o ar o site gerado; src/, tools/ e arquivos internos ficam de fora.
+name: Publicar site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Separar só o site gerado
+        run: |
+          mkdir _site
+          rsync -a \
+            --exclude '.git*' --exclude '.github' \
+            --exclude 'src' --exclude 'tools' --exclude '_*' \
+            --exclude '.vercel*' --exclude 'vercel.json' \
+            ./ _site/
+          ls _site
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4

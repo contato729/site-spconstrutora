@@ -1,0 +1,36 @@
+titulo: Portfólio | S&amp;P Engenharia e Construção
+descricao: Fotos de obras executadas pela S&amp;P Engenharia e Construção para Corsan, STIHL, GEDORE, Grupo Bimbo, Fitesa, Maiojama e Sport Club Internacional.
+caminho: portfolio/
+menu: portfolio
+---
+    <section class="banner" style="background-image: url('{{raiz}}assets/img/banner-portfolio.webp')">
+      <div class="container">
+        <h1>Portfólio</h1>
+        <nav class="migalhas" aria-label="Você está em"><a href="{{inicio}}">Início</a><span aria-hidden="true">/</span><span>Portfólio</span></nav>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <div class="cabecalho cabecalho--centro revelar">
+          <p class="sobretitulo">Obras realizadas</p>
+          <h2 class="titulo">Conheça alguns dos clientes que confiaram no nosso trabalho</h2>
+        </div>
+        <div class="filtros" role="group" aria-label="Filtrar por cliente">
+{{bloco:filtros}}
+        </div>
+        <div class="pf" data-galeria>
+{{bloco:portfolio_completo}}
+        </div>
+      </div>
+    </section>
+
+    <section class="chamada">
+      <div class="container chamada__dentro">
+        <div>
+          <h2>Sua obra pode ser a próxima</h2>
+          <p>Conte o que você precisa e receba um orçamento sem compromisso.</p>
+        </div>
+        <a class="btn btn--escuro btn--grande" href="{{raiz}}contato/#orcamento">Solicitar orçamento</a>
+      </div>
+    </section>

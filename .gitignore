@@ -1,0 +1,7 @@
+_originais/
+.claude/
+.vercel/
+__pycache__/
+
+.vercel
+_copias/
