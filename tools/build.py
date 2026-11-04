@@ -125,6 +125,22 @@ LOGOS_CAPA = ["Grupo Bimbo", "InBetta", "Sport Club Internacional", "STIHL", "GE
               "Hospital Moinhos de Vento", "TFL", "GEDORE"]
 
 
+# versões menores para o celular (srcset); geradas a partir do .webp já pronto
+REDUZIDAS = {"industria-larga": (960, 1280), "sp-branco": (260,),
+             **{f"serv-{n}": (480, 720) for n in ("execucao", "manutencao", "reformas", "projetos", "gerenciamento")}}
+
+
+def reduzidas():
+    for nome, larguras in REDUZIDAS.items():
+        with Image.open(os.path.join(IMG, nome + ".webp")) as im:
+            im.load()
+        for w in larguras:
+            destino = os.path.join(IMG, f"{nome}-{w}.webp")
+            if not os.path.exists(destino):
+                im.resize((w, round(im.height * w / im.width)), Image.LANCZOS).save(
+                    destino, "WEBP", quality=95 if im.mode == "RGBA" else 74, method=6)
+
+
 def capa():
     """Separa a foto de abertura original (i002) em foto limpa + uma imagem por marca de cliente."""
     import numpy as np
@@ -333,6 +349,7 @@ def main():
     avulsas()
     capa()
     logos()
+    reduzidas()
     urls = paginas()
     redirecionamentos()
     open(os.path.join(RAIZ, "sitemap.xml"), "w", newline="\n").write(

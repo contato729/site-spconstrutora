@@ -98,7 +98,7 @@ h1, h2, h3 { font-family: var(--titulos); color: var(--titulo); line-height: 1.2
 .capa__meio { position: relative; z-index: 1; display: flex; align-items: flex-start; gap: 39px; margin-right: 32px; padding-bottom: 9px; opacity: calc(1 - var(--r) * 1.7); transform: translateY(calc(var(--r) * -70px)); }
 .capa__marca { width: 163px; height: auto; margin-top: 18px; }
 .capa__texto { padding-top: 7px; }
-.capa h1 { display: flex; flex-direction: column; font-family: "Roboto", Arial, sans-serif; font-weight: 400; color: #ececec; text-transform: uppercase; }
+.capa__titulo { display: flex; flex-direction: column; font-family: "Roboto", Arial, sans-serif; font-weight: 400; color: #ececec; text-transform: uppercase; }
 .capa__anos { font: 700 48px/1 "Source Sans Pro", Arial, sans-serif; color: #fff; }
 .capa__lema { font-size: 22.67px; line-height: 28px; }
 .capa__lema--forte { font-size: 24px; font-weight: 700; line-height: 28.8px; }
@@ -388,7 +388,7 @@ h1, h2, h3 { font-family: var(--titulos); color: var(--titulo); line-height: 1.2
   .capa__meio { flex-direction: column; align-items: center; gap: 1.25rem; margin-right: 0; padding-bottom: 8rem; text-align: center; }
   .capa__marca { width: 130px; margin-top: 0; }
   .capa__texto { padding-top: 0; }
-  .capa h1 { align-items: center; }
+  .capa__titulo { align-items: center; }
   .capa__anos { font-size: 40px; }
   .capa__lema { font-size: 18px; line-height: 1.2; }
   .capa__lema--forte { font-size: 19px; }
