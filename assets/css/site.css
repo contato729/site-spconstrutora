@@ -479,3 +479,11 @@ h1, h2, h3 { font-family: var(--titulos); color: var(--titulo); line-height: 1.2
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js .revelar { opacity: 1; transform: none; }
 }
+
+/* Páginas de texto corrido (Central de E-mails / privacidade) */
+.prosa { max-width: 50rem; }
+.prosa > * + * { margin-top: 1rem; }
+.prosa h3 { margin-top: 2.25rem; font-size: 1.2rem; }
+.prosa ul { list-style: disc; padding-left: 1.4rem; }
+.prosa li + li { margin-top: .4rem; }
+.prosa a:not(.btn) { color: var(--azul); text-decoration: underline; text-underline-offset: 2px; }

@@ -1,0 +1,72 @@
+titulo: Política de Privacidade — Central de E-mails S&amp;P
+descricao: Política de Privacidade da Central de E-mails S&amp;P: quais dados o sistema acessa, como são usados, guardados e protegidos, e como pedir a exclusão.
+caminho: central-de-emails/privacidade/
+menu: nenhum
+---
+    <section class="banner" style="background-image: url('{{raiz}}assets/img/banner-contato.webp')">
+      <div class="container">
+        <h1>Política de Privacidade</h1>
+        <nav class="migalhas" aria-label="Você está em"><a href="{{inicio}}">Início</a><span aria-hidden="true">/</span><a href="{{raiz}}central-de-emails/">Central de E-mails</a><span aria-hidden="true">/</span><span>Privacidade</span></nav>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container prosa">
+        <p class="sobretitulo">Central de E-mails S&amp;P</p>
+        <h2 class="titulo">Política de Privacidade</h2>
+        <p><em>Última atualização: 4 de novembro de 2026.</em></p>
+
+        <h3>1. Quem somos</h3>
+        <p>A Central de E-mails S&amp;P (“Central”) é um sistema de uso interno da <strong>S&amp;P Manutenção Industrial e Predial Ltda.</strong> (S&amp;P Engenharia e Construção), CNPJ 00.604.035/0001-30, Rua Otaviano Silveira, 615, Sapucaia do Sul/RS. Contato do responsável pelos dados: <a href="mailto:contato@spconstrutora.com">contato@spconstrutora.com</a>.</p>
+        <p>A Central é usada somente por colaboradores autorizados da S&amp;P para gerenciar as caixas de e-mail da própria empresa. Não é um serviço oferecido ao público.</p>
+
+        <h3>2. Quais dados acessamos</h3>
+        <p>Quando um administrador conecta uma conta de e-mail da empresa pelo login oficial do Google (Gmail) ou da Microsoft (Outlook/Hotmail), a Central recebe permissão para:</p>
+        <ul>
+          <li><strong>ler</strong> as mensagens da conta (remetente, destinatários, assunto, data, texto e lista de anexos);</li>
+          <li><strong>organizar</strong> as mensagens: marcar como lida, arquivar e mover para a caixa de entrada;</li>
+          <li><strong>enviar</strong> e-mails, respostas e encaminhamentos — somente quando um usuário escreve e clica em “Enviar”.</li>
+        </ul>
+        <p>Para entrar na Central, o usuário faz login com a conta Google, e recebemos apenas o nome e o endereço de e-mail para conferir se ele está autorizado.</p>
+        <p>A Central <strong>nunca</strong> vê nem guarda senhas de e-mail, e não apaga mensagens de forma definitiva.</p>
+
+        <h3>3. Como usamos os dados</h3>
+        <p>Os dados são usados exclusivamente para as funções do sistema: mostrar as mensagens numa caixa de entrada única, permitir busca, organizar por empresa e por assunto, indicar o que precisa de resposta ou aguarda retorno, e permitir responder e enviar e-mails pela conta correta.</p>
+        <p>Quando a análise por inteligência artificial está ligada, o texto de mensagens enviadas por pessoas (não propagandas) é enviado à API Gemini do Google, no <strong>plano pago</strong>, apenas para classificar, priorizar e resumir. Nesse plano o Google não usa o conteúdo para treinar seus modelos. A IA só sugere: ela nunca envia, apaga ou arquiva mensagens.</p>
+
+        <h3>4. Uso Limitado dos dados do Google</h3>
+        <p>O uso e a transferência, para qualquer outro aplicativo, de informações recebidas das APIs do Google seguem a <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Política de Dados do Usuário dos Serviços de API do Google</a>, incluindo os requisitos de Uso Limitado. Em especial:</p>
+        <ul>
+          <li>os dados do Gmail são usados apenas para oferecer as funções da Central descritas acima;</li>
+          <li>não vendemos dados e não os usamos para publicidade, perfis de anúncios ou análise de crédito;</li>
+          <li>não transferimos dados a terceiros, exceto aos provedores necessários para o funcionamento do sistema (item 5), para cumprir a lei ou com autorização do usuário;</li>
+          <li>pessoas não leem os dados, salvo os próprios usuários autorizados da S&amp;P ao usar o sistema, com permissão expressa, para segurança (como investigar abuso) ou por obrigação legal;</li>
+          <li>os dados não são usados para desenvolver, melhorar ou treinar modelos de inteligência artificial generalizados.</li>
+        </ul>
+
+        <h3>5. Onde os dados ficam e quem os processa</h3>
+        <ul>
+          <li><strong>Banco de dados:</strong> Supabase, em servidor no Brasil (São Paulo). Guardamos cabeçalhos, o texto simples das mensagens (até 20 KB por mensagem), a lista de anexos (nome e tamanho), a organização feita pelo sistema e um registro de ações (quem enviou, arquivou ou conectou contas).</li>
+          <li><strong>Não guardamos</strong> o HTML original das mensagens nem os arquivos anexos: eles são buscados no Google ou na Microsoft no momento em que alguém abre ou baixa.</li>
+          <li><strong>Hospedagem do sistema:</strong> Vercel.</li>
+          <li><strong>Provedores de e-mail:</strong> Google (Gmail) e Microsoft (Outlook), as próprias contas conectadas.</li>
+          <li><strong>Inteligência artificial (opcional):</strong> API Gemini do Google, plano pago.</li>
+        </ul>
+
+        <h3>6. Segurança</h3>
+        <ul>
+          <li>as autorizações de acesso às contas (tokens) são guardadas <strong>criptografadas</strong> (AES-256-GCM), com chave que fica só no servidor;</li>
+          <li>toda a comunicação usa HTTPS;</li>
+          <li>o banco de dados não aceita acesso público — somente o servidor da Central;</li>
+          <li>o login no sistema é limitado a uma lista de usuários autorizados, com permissão por conta de e-mail.</li>
+        </ul>
+
+        <h3>7. Por quanto tempo guardamos e como excluir</h3>
+        <p>Os dados ficam guardados enquanto a conta de e-mail estiver conectada à Central. Ao desconectar uma conta (em Configurações), o acesso é revogado no Google ou na Microsoft, as autorizações são apagadas e é possível apagar também todas as mensagens copiadas daquela conta.</p>
+        <p>Também é possível remover o acesso a qualquer momento diretamente na conta Google, em <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>, ou na conta Microsoft, em <a href="https://account.live.com/consent/Manage" rel="noopener">account.live.com/consent/Manage</a>.</p>
+        <p>Para pedir a exclusão de dados ou exercer os direitos previstos na Lei Geral de Proteção de Dados (LGPD) — confirmação, acesso, correção, eliminação —, escreva para <a href="mailto:contato@spconstrutora.com">contato@spconstrutora.com</a>. Respondemos em até 15 dias.</p>
+
+        <h3>8. Alterações</h3>
+        <p>Esta política pode ser atualizada quando o sistema mudar. A data da última atualização fica no topo da página.</p>
+      </div>
+    </section>
