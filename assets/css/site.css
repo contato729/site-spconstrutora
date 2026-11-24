@@ -487,3 +487,106 @@ h1, h2, h3 { font-family: var(--titulos); color: var(--titulo); line-height: 1.2
 .prosa ul { list-style: disc; padding-left: 1.4rem; }
 .prosa li + li { margin-top: .4rem; }
 .prosa a:not(.btn) { color: var(--azul); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---------- páginas de serviço ---------- */
+.detalhe .detalhe__acoes { margin-top: 1.75rem; }
+.detalhe .detalhe__acoes .btn { margin-top: 0; }
+
+/* topo das páginas de serviço — escala contida, como nos sites de construtoras grandes (Mortenson, Turner):
+   selo pequeno espaçado, título de ~48 px, uma frase, um botão sólido + link discreto, logos pequenos numa faixa fina */
+.sv-topo { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: center; min-height: max(32rem, calc(100vh - 2.875rem)); min-height: max(32rem, calc(100svh - 2.875rem)); overflow: hidden; background: #050b14; color: #fff; }
+.sv-topo__foto { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; filter: brightness(.82) saturate(.9); }
+.sv-topo::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(5 11 20 / .96) 0%, rgb(5 11 20 / .9) 30%, rgb(5 11 20 / .55) 55%, rgb(5 11 20 / .15) 85%), linear-gradient(0deg, rgb(5 11 20 / .9) 0%, transparent 30%); }
+.sv-topo__texto { width: min(100% - 2.5rem, 1200px); margin-inline: auto; padding-block: 3.5rem 7.5rem; }
+.sv-topo__selo { display: flex; align-items: center; gap: .75rem; font: 500 .75rem/1 "Roboto", Arial, sans-serif; letter-spacing: .22em; text-transform: uppercase; color: #b8c3d1; }
+.sv-topo__selo::before { content: ""; width: 1.75rem; height: 2px; background: var(--destaque); }
+.sv-topo h1 { max-width: 34rem; margin-top: 1.1rem; font: 700 clamp(2.1rem, 3.3vw, 3rem)/1.05 "Source Sans Pro", Arial, sans-serif; letter-spacing: .005em; text-transform: uppercase; color: #fff; }
+.sv-topo h1 span { display: block; margin-top: .55rem; font: 500 .9rem/1.2 "Roboto", Arial, sans-serif; letter-spacing: .16em; color: var(--destaque); }
+.sv-topo__lead { max-width: 33rem; margin-top: 1.25rem; font: 400 1.02rem/1.65 "Roboto", Arial, sans-serif; color: #c9d2dd; }
+.sv-topo__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; margin-top: 2rem; }
+.sv-btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; height: 2.85rem; padding: 0 1.4rem; border-radius: 3px; background: var(--destaque); color: var(--azul-escuro); font: 700 .8rem/1 "Roboto", Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; transition: background-color .25s; }
+.sv-btn:hover { background: #ffc629; }
+.sv-btn .ic { width: 1.1rem; height: 1.1rem; }
+.sv-link { display: inline-flex; align-items: center; gap: .45rem; font: 500 .8rem/1 "Roboto", Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: #fff; border-bottom: 1px solid rgb(255 255 255 / .35); padding-bottom: .35rem; transition: border-color .25s; }
+.sv-link:hover { border-color: var(--destaque); }
+.sv-link .ic { width: 1rem; height: 1rem; }
+.sv-marcas { position: absolute; left: 0; right: 0; bottom: 0; padding-block: 1.4rem; border-top: 1px solid rgb(255 255 255 / .1); overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.sv-marcas ul { display: flex; align-items: center; width: max-content; animation: correr-capa 60s linear infinite; }
+.sv-marcas li { flex: none; padding-right: 3.5rem; }
+.sv-marcas img { height: calc(var(--h) * .5px); width: auto; opacity: .7; }
+.sv-marcas:hover ul { animation-play-state: paused; }
+
+/* blocos */
+.sv-secao { padding-block: clamp(3.25rem, 5vw, 4.5rem); }
+.sv-cab { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.25rem 4rem; align-items: end; margin-bottom: clamp(1.75rem, 3vw, 2.5rem); }
+.sv-cab .titulo { font-size: clamp(1.5rem, 2.2vw, 1.95rem); }
+.sv-cab > p { max-width: 30rem; font-size: .95rem; }
+
+/* o que fazemos: título fixo à esquerda + lista numerada com filetes (como as páginas de serviço da Mortenson/Turner) */
+.sv-escopo { background: var(--cinza); }
+.sv-escopo__corpo { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+.sv-escopo__cab { position: sticky; top: 6rem; }
+.sv-escopo__cab .titulo { font-size: clamp(1.5rem, 2.2vw, 1.95rem); }
+.sv-escopo__cab > p:not(.sobretitulo) { max-width: 24rem; margin-top: 1rem; font-size: .95rem; }
+.sv-escopo__cab .link-seta { margin-top: 1.6rem; }
+.sv-escopo__lista { border-top: 1px solid #cfd7e1; }
+.sv-escopo__lista li { display: grid; grid-template-columns: 3.25rem minmax(0, 1fr); padding: 1.35rem 0 1.4rem; border-bottom: 1px solid #cfd7e1; }
+.sv-escopo__n { padding-top: .2rem; font: 600 .8rem/1 var(--titulos); letter-spacing: .08em; color: var(--destaque-escuro); }
+.sv-escopo__lista h3 { font-size: 1.05rem; color: var(--azul); transition: color .25s; }
+.sv-escopo__lista p { max-width: 34rem; margin-top: .3rem; font-size: .92rem; line-height: 1.6; }
+.sv-escopo__lista li:hover h3 { color: var(--azul-2); }
+
+/* obras: três fotos grandes de borda a borda */
+.sv-obras { padding-bottom: 0; }
+.sv-obras__grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.sv-obras__grade .pf-item { border-radius: 0; }
+.sv-obras__grade .pf-item img { aspect-ratio: 4 / 3; }
+.sv-obras__grade .pf-item__capa { opacity: 1; background: linear-gradient(0deg, rgb(6 23 45 / .92) 0%, rgb(6 23 45 / .25) 45%, transparent 70%); padding: 1.25rem 1.4rem; }
+.sv-obras__grade .pf-item__capa :is(strong, small) { transform: none; }
+.sv-obras__grade .pf-item__capa strong { font-size: 1rem; }
+.sv-obras__grade .pf-item__capa small { font-size: .82rem; }
+.sv-obras__grade .pf-item__lupa { opacity: 0; }
+.sv-obras__grade .pf-item:hover .pf-item__lupa { opacity: 1; }
+
+/* como funciona */
+.sv-passos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; counter-reset: passo; }
+.sv-passos li { position: relative; padding: 1.6rem 1.5rem; background: #fff; border-top: 4px solid var(--azul); box-shadow: 0 4px 24px rgb(10 34 64 / .06); counter-increment: passo; }
+.sv-passos li::before { content: "0" counter(passo); display: block; font: 700 1.9rem/1 var(--titulos); color: var(--destaque); letter-spacing: -.02em; margin-bottom: .8rem; }
+.sv-passos h3 { font-size: 1rem; margin-bottom: .4rem; }
+.sv-passos p { font-size: .9rem; line-height: 1.6; }
+
+/* dúvidas + cartão de contato */
+.sv-duvidas { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(18rem, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.sv-duvidas .titulo { font-size: clamp(1.5rem, 2.2vw, 1.95rem); margin-bottom: 1.25rem; }
+.faq__item { border-bottom: 1px solid var(--linha); }
+.faq__item:first-child { border-top: 1px solid var(--linha); }
+.faq__item summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.05rem 0; cursor: pointer; list-style: none; }
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::after { content: "+"; flex: none; display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--cinza); color: var(--azul); font: 600 1.3rem/1 var(--titulos); transition: transform .3s, background .3s; }
+.faq__item[open] summary::after { transform: rotate(45deg); background: var(--destaque); }
+.faq__item h3 { font-size: .98rem; }
+.faq__item p { padding: 0 3rem 1.2rem 0; font-size: .93rem; }
+.sv-cartao { position: sticky; top: 5rem; padding: 1.9rem 1.75rem; background: var(--azul-escuro); color: #c5d0de; border-top: 5px solid var(--destaque); }
+.sv-cartao h2 { color: #fff; font-size: 1.2rem; }
+.sv-cartao > p { margin-top: .6rem; font-size: .95rem; line-height: 1.6; }
+.sv-cartao .btn { width: 100%; margin-top: 1.5rem; }
+.sv-cartao ul { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgb(255 255 255 / .12); display: grid; gap: .75rem; font-size: .93rem; }
+.sv-cartao li { display: flex; align-items: center; gap: .7rem; }
+.sv-cartao li .ic { color: var(--destaque); }
+.sv-cartao a:hover { color: #fff; text-decoration: underline; }
+
+@media (max-width: 1023px) {
+  .sv-passos { grid-template-columns: 1fr 1fr; }
+  .sv-cab, .sv-duvidas, .sv-escopo__corpo { grid-template-columns: 1fr; }
+  .sv-cartao, .sv-escopo__cab { position: static; }
+}
+@media (max-width: 767px) {
+  .sv-topo::before { background: linear-gradient(90deg, rgb(5 11 20 / .92), rgb(5 11 20 / .7)), linear-gradient(0deg, rgb(5 11 20 / .9) 0%, transparent 30%); }
+  .sv-topo__texto { padding-block: 2.75rem 6.5rem; }
+  .sv-topo h1 { font-size: 2.1rem; }
+  .sv-btn { width: 100%; }
+  .sv-marcas li { padding-right: 2.5rem; }
+  .sv-passos, .sv-obras__grade { grid-template-columns: 1fr; }
+  .sv-escopo__lista li { grid-template-columns: 2.5rem minmax(0, 1fr); }
+  .faq__item p { padding-right: 0; }
+}

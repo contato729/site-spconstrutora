@@ -149,10 +149,19 @@
       var d = new FormData(form);
       var nome = (d.get("nome") || "").trim();
       var empresa = (d.get("empresa") || "").trim();
+      var cidade = (d.get("cidade") || "").trim();
       var msg = (d.get("mensagem") || "").trim();
       if (!nome || !msg) return null;
-      return "Olá! Sou " + nome + (empresa ? ", da " + empresa : "") + ".\n" +
-        "Serviço: " + d.get("servico") + "\n\n" + msg;
+      return "Olá! Sou " + nome + (empresa ? ", da " + empresa : "") + ". Vim pelo formulário do site.\n" +
+        "Serviço: " + d.get("servico") + "\n" + (cidade ? "Cidade da obra: " + cidade + "\n" : "") + "\n" + msg;
+    }
+
+    // as páginas de serviço mandam ?servico=... para já deixar o serviço escolhido
+    var pedido = new URLSearchParams(location.search).get("servico");
+    if (pedido) {
+      Array.prototype.forEach.call(form.servico.options, function (op) {
+        if (op.text === pedido) form.servico.value = op.value;
+      });
     }
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -166,7 +175,7 @@
     });
     linkEmail.addEventListener("click", function () {
       var texto = montarMensagem();
-      linkEmail.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Pedido de orçamento") +
+      linkEmail.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Pedido de orçamento: " + form.servico.value) +
         (texto ? "&body=" + encodeURIComponent(texto) : "");
     });
   }

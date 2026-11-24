@@ -24,7 +24,7 @@
   <link rel="preload" href="{{raiz}}assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{raiz}}assets/fonts/opensans-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{raiz}}assets/fonts/sourcesans-700.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{{raiz}}assets/css/site.css">
+  <link rel="stylesheet" href="{{raiz}}assets/css/site.css?v={{vcss}}">
   <script>document.documentElement.classList.add("js");</script>
 
   <script type="application/ld+json">
@@ -113,11 +113,10 @@
       <div class="rodape__col">
         <h2>Serviços</h2>
         <ul class="rodape__lista">
-          <li><a href="{{raiz}}servicos/#execucao">Execução de obras</a></li>
-          <li><a href="{{raiz}}servicos/#manutencao">Manutenção industrial</a></li>
-          <li><a href="{{raiz}}servicos/#reformas">Reformas e retrofit</a></li>
-          <li><a href="{{raiz}}servicos/#projetos">Projetos personalizados</a></li>
-          <li><a href="{{raiz}}servicos/#gerenciamento">Consultoria e gerenciamento</a></li>
+          <li><a href="{{raiz}}servicos/execucao-de-obras-industriais/">Obras industriais</a></li>
+          <li><a href="{{raiz}}servicos/manutencao-industrial/">Manutenção industrial</a></li>
+          <li><a href="{{raiz}}servicos/reformas-e-retrofit/">Reformas e retrofit</a></li>
+          <li><a href="{{raiz}}servicos/projetos-e-gerenciamento-de-obras/">Projetos e gerenciamento</a></li>
         </ul>
       </div>
       <div class="rodape__col">
@@ -137,7 +136,7 @@
     </div>
   </footer>
 
-  <a class="zap" href="https://wa.me/5551984471009?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20S%26P." rel="noopener" aria-label="Conversar pelo WhatsApp">{{icone:brand-whatsapp}}</a>
+  <a class="zap" href="https://wa.me/5551984471009?text={{zap}}" rel="noopener" aria-label="Conversar pelo WhatsApp">{{icone:brand-whatsapp}}</a>
   <a class="subir" href="#topo" aria-label="Voltar ao topo" hidden>{{icone:chevron-up}}</a>
 
   <dialog class="luz" id="luz" aria-label="Foto ampliada">
@@ -150,6 +149,6 @@
     <button class="luz__seta luz__seta--prox" type="button" data-acao="proxima" aria-label="Próxima foto">{{icone:chevron-right}}</button>
   </dialog>
 
-  <script src="{{raiz}}assets/js/site.js" defer></script>
+  <script src="{{raiz}}assets/js/site.js?v={{vjs}}" defer></script>
 </body>
 </html>

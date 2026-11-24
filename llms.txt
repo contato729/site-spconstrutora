@@ -11,11 +11,10 @@
 
 ## Serviços
 
-- [Execução de obras](https://www.spconstrutora.com/servicos/#execucao): construção civil industrial e comercial, da concepção ao acabamento, dentro do prazo.
-- [Manutenção industrial](https://www.spconstrutora.com/servicos/#manutencao): manutenção preventiva e corretiva de instalações industriais, para minimizar paradas e manter a eficiência operacional.
-- [Reformas e retrofit](https://www.spconstrutora.com/servicos/#reformas): modernização e adaptação de edificações existentes às exigências de uso, segurança e sustentabilidade.
-- [Projetos personalizados](https://www.spconstrutora.com/servicos/#projetos): projetos de obras comerciais e industriais, como fábricas, armazéns e lojas.
-- [Consultoria e gerenciamento](https://www.spconstrutora.com/servicos/#gerenciamento): acompanhamento de prazo, orçamento e qualidade da obra até a entrega.
+- [Construção de obras industriais](https://www.spconstrutora.com/servicos/execucao-de-obras-industriais/): obras novas e ampliações (fundações, estruturas de concreto armado, terraplenagem, drenagem, pisos, pavimentação e coberturas metálicas), da concepção ao acabamento, dentro do prazo.
+- [Manutenção industrial](https://www.spconstrutora.com/servicos/manutencao-industrial/): manutenção preventiva e corretiva da infraestrutura civil da planta (pisos, coberturas, fachadas, drenagem e estruturas), para minimizar paradas.
+- [Reformas e retrofit](https://www.spconstrutora.com/servicos/reformas-e-retrofit/): modernização e adaptação de edificações industriais e comerciais às exigências de uso, segurança e sustentabilidade.
+- [Projetos e gerenciamento de obras](https://www.spconstrutora.com/servicos/projetos-e-gerenciamento-de-obras/): projetos sob medida para fábricas, armazéns e lojas, e acompanhamento de prazo, orçamento e qualidade da obra até a entrega.
 
 ## Clientes atendidos
 

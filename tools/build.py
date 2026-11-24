@@ -12,6 +12,7 @@ Para acrescentar fotos: ponha o arquivo em _originais/, inclua o nome na obra em
 import html
 import os
 import re
+from urllib.parse import quote
 
 from PIL import Image, ImageOps
 
@@ -73,6 +74,11 @@ AVULSAS = [
     ("serv-reformas", "i070.jpg", 900, 640, (0.5, 0.5)),
     ("serv-projetos", "i049.gif", 900, 640, (0.5, 0.65)),
     ("serv-gerenciamento", "i066.jpg", 900, 640, (0.55, 0.5)),
+    # fundo do topo das páginas de serviço (tela cheia)
+    ("topo-manutencao", "i087.jpg", 1920, 900, (0.5, 0.6)),
+    ("topo-execucao", "i053.gif", 1920, 900, (0.5, 0.45)),
+    ("topo-reformas", "i064.jpg", 1920, 900, (0.5, 0.5)),
+    ("topo-projetos", "i041.jpg", 1920, 900, (0.5, 0.4)),
 ]
 
 
@@ -127,7 +133,8 @@ LOGOS_CAPA = ["Grupo Bimbo", "InBetta", "Sport Club Internacional", "STIHL", "GE
 
 # versões menores para o celular (srcset); geradas a partir do .webp já pronto
 REDUZIDAS = {"industria-larga": (960, 1280), "sp-branco": (260,),
-             **{f"serv-{n}": (480, 720) for n in ("execucao", "manutencao", "reformas", "projetos", "gerenciamento")}}
+             **{f"serv-{n}": (480, 720) for n in ("execucao", "manutencao", "reformas", "projetos", "gerenciamento")},
+             **{f"topo-{n}": (960,) for n in ("execucao", "manutencao", "reformas", "projetos")}}
 
 
 def reduzidas():
@@ -271,6 +278,16 @@ def bloco_filtros(raiz):
     return "\n".join(botoes)
 
 
+def bloco_obras(raiz, ids):
+    # fotos de destaque das obras pedidas, na ordem dada (páginas de serviço)
+    por_id = {o["id"]: o for o in OBRAS}
+    itens = []
+    for i in ids.split(","):
+        o = por_id[i]
+        itens.append(item_portfolio(o, o["destaque"] + 1, o["itens"][o["destaque"]], raiz))
+    return "\n".join(itens)
+
+
 def _logo(chave, nome, raiz):
     with Image.open(os.path.join(IMG, "clientes", chave + ".webp")) as im:
         w, h = im.size
@@ -290,8 +307,17 @@ def bloco_logos_grade(raiz):
 BLOCOS = {
     "portfolio_home": bloco_portfolio_home, "portfolio_completo": bloco_portfolio_completo,
     "filtros": bloco_filtros, "logos_carrossel": bloco_logos_carrossel, "logos_grade": bloco_logos_grade,
-    "capa_marcas": bloco_capa_marcas,
+    "capa_marcas": bloco_capa_marcas, "obras": bloco_obras,
 }
+
+ZAP_PADRAO = "Olá! Vim pelo site da S&P e gostaria de informações sobre os serviços."
+
+
+def texto_zap(meta):
+    # cada página manda uma mensagem própria, para saber de onde veio o contato
+    assunto = meta.get("assunto")
+    texto = f"Olá! Vim pelo site da S&P (página {assunto}) e gostaria de um orçamento." if assunto else ZAP_PADRAO
+    return quote(texto, safe="")
 
 
 def icone(nome):
@@ -310,17 +336,23 @@ def ler_pagina(arquivo):
 
 def paginas():
     layout = open(os.path.join(SRC, "layout.html"), encoding="utf-8").read()
+    # versão do CSS/JS no endereço (muda quando o arquivo muda) para o navegador não usar cópia antiga
+    import hashlib
+    def versao(caminho):
+        return hashlib.md5(open(os.path.join(RAIZ, caminho), "rb").read()).hexdigest()[:8]
+    vcss, vjs = versao("assets/css/site.css"), versao("assets/js/site.js")
     urls = []
     for arquivo in sorted(os.listdir(os.path.join(SRC, "paginas"))):
         meta, corpo = ler_pagina(arquivo)
         caminho = meta.get("caminho", "")
         raiz = "/" if arquivo == "404.html" else "../" * caminho.count("/")
         pagina = layout.replace("{{conteudo}}", corpo)
-        pagina = re.sub(r"\{\{bloco:(\w+)\}\}", lambda m: BLOCOS[m.group(1)](raiz), pagina)
+        pagina = re.sub(r"\{\{bloco:(\w+)(?::([\w,-]+))?\}\}",
+                        lambda m: BLOCOS[m.group(1)](raiz, *filter(None, [m.group(2)])), pagina)
         pagina = re.sub(r"\{\{ativo:([\w-]*)\}\}",
                         lambda m: ' class="ativo" aria-current="page"' if m.group(1) == meta["menu"] else "", pagina)
         pagina = re.sub(r"\{\{icone:([\w-]+)\}\}", lambda m: icone(m.group(1)), pagina)
-        for chave, valor in dict(meta, raiz=raiz, inicio=raiz or "./", url=DOMINIO + caminho).items():
+        for chave, valor in dict(meta, raiz=raiz, inicio=raiz or "./", url=DOMINIO + caminho, zap=texto_zap(meta), vcss=vcss, vjs=vjs).items():
             pagina = pagina.replace("{{" + chave + "}}", valor)
         sobra = re.search(r"\{\{[^}]+\}\}", pagina)
         if sobra:

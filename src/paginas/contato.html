@@ -39,7 +39,7 @@ menu: contato
           <div class="contato__form revelar">
             <p class="sobretitulo">Orçamento</p>
             <h2 class="titulo">Solicite um orçamento ao nosso corpo técnico</h2>
-            <p>Preencha os campos e envie: a mensagem abre pronta no seu WhatsApp. Nenhum dado fica guardado neste site.</p>
+            <p>Preencha os campos e escolha como enviar: a mensagem abre pronta no seu WhatsApp ou no seu e-mail. Retornamos em horário comercial, de segunda a sexta, das 8h às 17h. Nenhum dado fica guardado neste site.</p>
             <form class="form" id="form-orcamento" novalidate>
               <div class="campo">
                 <label for="f-nome">Nome</label>
@@ -49,7 +49,11 @@ menu: contato
                 <label for="f-empresa">Empresa <span>(opcional)</span></label>
                 <input id="f-empresa" name="empresa" type="text" autocomplete="organization">
               </div>
-              <div class="campo campo--larga">
+              <div class="campo">
+                <label for="f-cidade">Cidade da obra <span>(opcional)</span></label>
+                <input id="f-cidade" name="cidade" type="text" autocomplete="address-level2">
+              </div>
+              <div class="campo">
                 <label for="f-servico">Serviço</label>
                 <select id="f-servico" name="servico">
                   <option>Execução de obra</option>
@@ -67,7 +71,7 @@ menu: contato
               <p class="form__erro" id="form-erro" role="alert" hidden>Preencha o nome e a mensagem para enviar.</p>
               <div class="form__acoes">
                 <button class="btn btn--primario btn--grande" type="submit">{{icone:brand-whatsapp}} Enviar pelo WhatsApp</button>
-                <a class="form__email" id="link-email" href="mailto:contato@spconstrutora.com">ou enviar por e-mail</a>
+                <a class="btn btn--escuro btn--grande" id="link-email" href="mailto:contato@spconstrutora.com">{{icone:mail}} Enviar por e-mail</a>
               </div>
             </form>
           </div>
